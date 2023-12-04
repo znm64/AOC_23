@@ -1,5 +1,5 @@
 #part1
-'''
+
 raw = [i.strip() for i in open('4data.txt', 'r').readlines()]
 
 def getnums(raw):
@@ -26,7 +26,7 @@ for card in allnums:
             score = (score*2 if score > 0 else 1)
     scores.append(score)
 print(scores)
-print(sum(scores))'''
+print(sum(scores))
 
 #part2
 
@@ -48,17 +48,13 @@ def getnums(raw):
 allnums = (getnums(raw))
 
 cards = [i for i in range(len(allnums))]
-print(cards.count(1))
-#goes to the first card in cards, finds score, adds the new cards
+#goes to the first chunk of repeated  cards, finds score, adds the new cards(accounting for how many repeated cards were read)
 final = 0
 while sum(cards) != 0:
     cards.sort()
     cardnum = cards.pop(0)
     card = allnums[cardnum]
     repeats = cards.count(cardnum)
-    print(cards)
-    print('cardnum', cardnum)
-    print('repeats', repeats)
     final += repeats+1
     cards = cards[repeats:]
     score = 0
@@ -70,6 +66,5 @@ while sum(cards) != 0:
         for i in newcards:
             for count in range(repeats+1):
                 cards.append(i)
-        #print(newcards)
 print(final)
 
