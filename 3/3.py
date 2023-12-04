@@ -1,5 +1,5 @@
 #part1
-lines = [i.strip() for i in open('data.txt', 'r').readlines()]
+lines = [i.strip() for i in open('3data.txt', 'r').readlines()]
 raw = ''
 #got the symbol list by removing any digits or periods from the raw text, copying the
 #terminal result back into the code

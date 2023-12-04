@@ -1,7 +1,7 @@
 #part2
 #just overwrote the code for part 1
 debugreg = []
-lines = open('data.txt', 'r').readlines()
+lines = open('1data.txt', 'r').readlines()
 line_nums = [[] for i in range(len(lines))]
 #originally, the mapping of words to num was one:1, but for part 2, i changed the mapping to also include the first and last letters
 #this was because twone should evaluate to 21, not 2ne, in part 2. This was not mentioned in the instuctions, and does not affect the test case

@@ -1,5 +1,5 @@
 #part1
-raw = open('data.txt', 'r').readlines()
+raw = open('2data.txt', 'r').readlines()
 def dataprocess(raw):
     lines = []
     for i in raw:
