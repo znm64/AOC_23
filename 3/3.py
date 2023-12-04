@@ -2,9 +2,12 @@
 lines = [i.strip() for i in open('3data.txt', 'r').readlines()]
 raw = ''
 #got the symbol list by removing any digits or periods from the raw text, copying the
-#terminal result back into the code
+#terminal result back into the code.
 symbols = ['*', '/', '+', '%', '&', '-', '=', '$', '@', '#']
 #lol didnt need this function in the end - some people used a solution with this?
+#the idea here was to find symbols first, then to find the numbers afterwards.
+#that would be a lot longer - about 100 lines, and annoying to code, since searching for 
+#an adjacent number is fiddly.
 def findnum(x, y):
     first, last = x, x
     front, back = True, True
@@ -22,7 +25,7 @@ def findnum(x, y):
     return lines[y][first:last+1], first, last 
 #finds all the numbers in the data, saves them to array nums.
 #each element of nums is a list, first element is the number, second and third are the 
-#line positions(x then y)
+#line positions(x then y).
 def searchnums():
     nums = []
     for step, i in enumerate(lines):
@@ -43,8 +46,9 @@ def searchnums():
                     current = ''
     return nums
 #searches all adjacent characters around the number for symbols. valid is a flag, starts
-#as false, only gets set to true if a symbol is found. needed to account for the search
-#staying within the limits of the 2d array, thus the if...if monstrosity(could have been done better)
+#as false, only gets set to true if a symbol is found. 
+#needed to account for the search staying within the limits of the 2d array, thus the if...if 
+#monstrosity(could have been done better).
 x = (searchnums())
 print(x)
 total = 0
@@ -86,8 +90,8 @@ print(total)
 lines = [i.strip() for i in open('data.txt', 'r').readlines()]
 raw = ''
 symbolmap = [[[] for i in range(len(lines[0]))] for i in range(len(lines)+1)]
-#symbols was changed here, since it was easier than changing the code later
-#allsymbols replaced its original use
+#symbols was changed here, since it was easier than changing the code later.
+#allsymbols replaced its original use.
 symbols = ['*']
 allsymbols = ['*', '/', '+', '%', '&', '-', '=', '$', '@', '#']
 def searchnums():
@@ -111,8 +115,8 @@ def searchnums():
     return nums
 x = (searchnums())
 total = 0
-#saves numbers to the asterisk adjacent to them, if one is found
-#if theres only two numbers to each asterisk, their product is added to the final sum
+#saves numbers to the asterisk adjacent to them, if one is found.
+#if theres only two numbers to each asterisk, their product is added to the final sum.
 for i in x:
     valid = False
     y = i[2]
