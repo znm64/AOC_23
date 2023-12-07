@@ -69,6 +69,7 @@ print(total)
 #part 2
 #doesn't quite work, but close
 #need to count how many jokers were used, then stop them from being reused
+#use this test case: https://www.reddit.com/r/adventofcode/comments/18cr4xr/2023_day_7_better_example_input_not_a_spoiler/
 from operator import itemgetter, attrgetter
 hands  = [i.strip() for i in open('7data.txt', 'r').readlines()]
 hands = [i.split(' ') for i in hands]
