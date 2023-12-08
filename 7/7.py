@@ -1,6 +1,6 @@
 #part 1
 
-from operator import itemgetter, attrgetter
+'''from operator import itemgetter, attrgetter
 hands  = [i.strip() for i in open('7data.txt', 'r').readlines()]
 hands = [i.split(' ') for i in hands]
 cardsymbols = 'AKQJT98765432'
@@ -64,7 +64,7 @@ print(final)
 total = 0
 for count, i in enumerate(final):
     total += int(i[1])*(count+1)
-print(total)
+print(total)'''
 
 #part 2
 #doesn't quite work, but close
@@ -86,6 +86,8 @@ def calcvalue(hand):
 
 for i in hands:
     fullhouse = [False, False]
+    jokersused = [0, 0]
+    #no. of jokers used, and test priority
     hand = i[0]
     doublelist = []
     priorityflag = 10
