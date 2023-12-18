@@ -86,10 +86,12 @@ for y, row in enumerate(lines):
         if i == '#':galaxies.append([x, y])
 for i in lines:
     print(i)
-print(galaxies)
 final = 0
+count = 0
+modif = 6
 for base in galaxies:
     for destination in galaxies:
+        count += 1
         location = base
         horizontalpath= []
         verticalpath= []
@@ -102,11 +104,10 @@ for base in galaxies:
             verticalpath = destination[1] - location[1]
             if verticalpath > 0: verticalpath = ''.join(getcol(location[0])[location[1]+1:location[1]+verticalpath+1])
             else: verticalpath = ''.join(getcol(location[0])[location[1]+verticalpath:location[1]])
-        print(location, destination)
-        print(horizontalpath, ',', verticalpath)
         if horizontalpath == []: horizontalpath = ''
         if verticalpath == []: verticalpath = ''
-        a = ([10**6 if i == '*' else 1 for i in horizontalpath+verticalpath])
-        print('sum:', sum(a))
-        final+=sum(a) 
+        a = horizontalpath+verticalpath
+        b = len(a)+(a.count('*')*((10**modif)-1))
+        final+=b
+final -= 2*(count+1)
 print(final//2)
